@@ -18,6 +18,7 @@ public class AspectjPlugin implements Plugin<Project> {
         }
         project.dependencies {
             compile 'org.aspectj:aspectjrt:1.8.9'
+            compile 'com.adamzfc.permission:runtime:0.0.1'
         }
         final def log = project.logger
         log.error "AspectjPlugin start";
@@ -33,6 +34,7 @@ public class AspectjPlugin implements Plugin<Project> {
             javaCompile.doLast {
                 String[] args = ["-showWeaveInfo",
                                  "-1.7",
+                                 "-XnoInline",
                                  "-inpath", javaCompile.destinationDir.toString(),
                                  "-aspectpath", javaCompile.classpath.asPath,
                                  "-d", javaCompile.destinationDir.toString(),

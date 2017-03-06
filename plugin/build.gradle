@@ -14,7 +14,7 @@ publishing {
         maven(MavenPublication) {
             groupId 'com.adamzfc.permission'
             artifactId 'plugin'
-            version '0.0.1'
+            version '0.0.3'
             from components.java
         }
     }

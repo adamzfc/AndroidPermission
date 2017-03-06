@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.adamzfc.permission.plugin.aspectj-plugin'
+//apply plugin: 'com.adamzfc.permission.plugin.aspectj-plugin'
+apply plugin: 'maven-publish'
 
 android {
     compileSdkVersion 25
@@ -23,6 +24,18 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_7
         targetCompatibility JavaVersion.VERSION_1_7
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId 'com.adamzfc.permission'
+            artifactId 'runtime'
+            version '0.0.1'
+//            from components.java
+            artifact("$buildDir/outputs/aar/runtime-release.aar")
+        }
     }
 }
 
