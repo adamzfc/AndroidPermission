@@ -1,1 +1,1 @@
-include ':app', ':annotations', ':runtime'
+include ':app', ':annotations', ':runtime', ':plugin'

@@ -1,0 +1,28 @@
+apply plugin: 'groovy'
+apply plugin: 'maven-publish'
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+    compile 'com.android.tools.build:gradle:2.2.2'
+    compile 'org.aspectj:aspectjtools:1.8.9'
+    compile 'org.aspectj:aspectjrt:1.8.9'
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId 'com.adamzfc.permission'
+            artifactId 'plugin'
+            version '0.0.1'
+            from components.java
+        }
+    }
+}
+
+repositories {
+    jcenter()
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
